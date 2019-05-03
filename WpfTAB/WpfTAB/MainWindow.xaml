@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfTAB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:WpfTAB"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Border Padding="6">
+            <TabControl Name="MainTabControl" Margin="10">
+                <TabItem Name="FirstTab" Header="Tab">
+                    <Grid Background="#FFE5E5E5">
+                        <WebBrowser Source="https://www.google.com"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Name="NewTab" Header="+" MouseLeftButtonDown="NewTab_MouseLeftButtonDown">
+                    <Grid Background="#FFE5E5E5"/>
+
+                </TabItem>
+            </TabControl>
+        </Border>
+
+    </Grid>
+</Window>
