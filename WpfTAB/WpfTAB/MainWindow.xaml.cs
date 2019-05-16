@@ -25,11 +25,30 @@ namespace WpfTAB
             InitializeComponent();
         }
 
-        private void NewTab_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void AddTab(object sender, MouseButtonEventArgs e)
         {
-            TabControl newTabControl = new TabControl();
-            MainTabControl.Items.Add(newTabControl);
-            
+            var web = new WebBrowser
+            {
+                Source = new Uri("https://google.kz")
+            };
+
+            var textBlock = new TextBlock
+            {
+                Text = "Новая вкладка"
+            };
+
+            var newTab = new TabItem
+            {
+                Header = textBlock,
+                Content = web
+            };
+
+            var indexAddNewTab = tabs.Items.Count - 1;
+            var lastAddNewTab = tabs.Items[indexAddNewTab];
+
+            tabs.Items.RemoveAt(indexAddNewTab);
+            tabs.Items.Add(newTab);
+            tabs.Items.Add(lastAddNewTab);
         }
     }
 }

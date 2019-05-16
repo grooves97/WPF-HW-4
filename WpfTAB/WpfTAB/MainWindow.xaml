@@ -15,19 +15,16 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Border Padding="6">
-            <TabControl Name="MainTabControl" Margin="10">
-                <TabItem Name="FirstTab" Header="Tab">
-                    <Grid Background="#FFE5E5E5">
-                        <WebBrowser Source="https://www.google.com"/>
-                    </Grid>
-                </TabItem>
-                <TabItem Name="NewTab" Header="+" MouseLeftButtonDown="NewTab_MouseLeftButtonDown">
-                    <Grid Background="#FFE5E5E5"/>
+        <TabControl Name="tabs" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            <TabItem>
+                <TabItem.Header>Новая вкладка</TabItem.Header>
+                <TabItem.Content>
+                    <WebBrowser Source="https://google.kz"></WebBrowser>
+                </TabItem.Content>
+            </TabItem>
 
-                </TabItem>
-            </TabControl>
-        </Border>
-
+            <TabItem Name="addTab" Header="+" PreviewMouseLeftButtonDown="AddTab" >
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
